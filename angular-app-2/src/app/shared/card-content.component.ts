@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-card-content',
@@ -12,8 +12,8 @@ import { Component, OnInit, Input } from '@angular/core';
   `
 })
 export class CardContentComponent implements OnInit {
-  @Input() name;
-  @Input() description;
+  @Input() name!: any;
+  @Input() description!: any;
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

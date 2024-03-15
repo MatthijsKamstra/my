@@ -48,10 +48,12 @@ export class InMemoryDataService {
    * @param utils for manipulating parsed URL
    */
   parseRequestUrl(url: string, utils: RequestInfoUtilities): ParsedRequestUrl {
-    const parsed = utils.parseRequestUrl(url);
-    parsed.collectionName = this.active
-      ? mapCollectionName(parsed.collectionName)
-      : undefined;
+    const parsed: ParsedRequestUrl = utils.parseRequestUrl(url);
+    if (this.active) {
+      parsed.collectionName = mapCollectionName(parsed.collectionName || "");
+    } else {
+      parsed.collectionName = ""; // Assign an empty string if this.active is false
+    }
     return parsed;
   }
 }

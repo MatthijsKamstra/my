@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { Product } from '../core';
 
 @Component({
@@ -24,7 +24,7 @@ import { Product } from '../core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductListComponent {
-  @Input() products: Product[];
+  @Input() products!: Product[];
 
   trackByProduct(index: number, product: Product): number {
     return product.id;

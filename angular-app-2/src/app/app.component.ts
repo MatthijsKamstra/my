@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 export class Customer {
-  public id: number;
-  public name: string;
+  public id!: number;
+  public name!: string;
 }
 @Component({
   selector: 'app-root',
